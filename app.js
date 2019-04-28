@@ -36,8 +36,10 @@ app.post('/upload', (req, res)=> {
             });}
             else{
 
-            console.log(req.file);
-            res.send('Uploaded');
+            res.render('index',{
+                msg: "Uploaded",
+                file: `uploads/${req.file.filename}`
+            });
         }
     })
 });
